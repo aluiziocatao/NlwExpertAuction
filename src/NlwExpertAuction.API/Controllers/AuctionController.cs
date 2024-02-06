@@ -4,9 +4,7 @@ using NlwExpertAuction.API.UseCases.Auctions.GetCurrent;
 
 namespace NlwExpertAuction.API.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
-public class AuctionController : ControllerBase
+public class AuctionController : NlwExpertAuctionControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(Auction), StatusCodes.Status200OK)]
