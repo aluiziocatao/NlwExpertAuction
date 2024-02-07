@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using NlwExpertAuction.API.Contracts;
 using NlwExpertAuction.API.Filters;
+using NlwExpertAuction.API.Repositories;
+using NlwExpertAuction.API.Repositories.DataAccess;
 using NlwExpertAuction.API.Services;
+using NlwExpertAuction.API.UseCases.Auctions.GetCurrent;
 using NlwExpertAuction.API.UseCases.Offers.CreateOffer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +47,15 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<AuthenticationUserAttribute>();
 builder.Services.AddScoped<LoggedUser>();
 builder.Services.AddScoped<CreateOfferUseCase>();
+builder.Services.AddScoped<GetCurrentAuctionUseCase>();
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddScoped<IOfferRepository, OfferRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddDbContext<NlwExpertAuctionDbContext>(options =>
+{
+    options.UseSqlite("Data Source=D:\\Documentos\\Code\\NlwExpertAuction\\leilaoDbNLW.db");
+});
 
 builder.Services.AddHttpContextAccessor();
 

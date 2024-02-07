@@ -1,6 +1,6 @@
 ﻿using NlwExpertAuction.API.Comunication.Requests;
+using NlwExpertAuction.API.Contracts;
 using NlwExpertAuction.API.Entities;
-using NlwExpertAuction.API.Repositories;
 using NlwExpertAuction.API.Services;
 
 namespace NlwExpertAuction.API.UseCases.Offers.CreateOffer;
@@ -8,16 +8,16 @@ namespace NlwExpertAuction.API.UseCases.Offers.CreateOffer;
 public class CreateOfferUseCase
 {
     private readonly LoggedUser _loggedUser;
+    private readonly IOfferRepository _repository;
 
-    public CreateOfferUseCase(LoggedUser loggedUser)
+    public CreateOfferUseCase(LoggedUser loggedUser, IOfferRepository repository)
     {
         _loggedUser = loggedUser;
+        _repository = repository;
     }
 
     public int Execute(int itemId, RequestCreateOfferJson request)
     {
-        var repository = new NlwExpertAuctionDbContext();
-
         var user = _loggedUser.User();
 
         var offer = new Offer
@@ -28,9 +28,7 @@ public class CreateOfferUseCase
             UserId = user.Id
         };
 
-        repository.Offers.Add(offer);
-
-        repository.SaveChanges();
+        _repository.Add(offer);
 
         return offer.Id;
     }
