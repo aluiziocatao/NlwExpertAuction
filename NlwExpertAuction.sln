@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0C9A80D0-E85
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{56B72B6D-0CE9-4F73-A663-02DC3498C316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NlwExpertAuction.API", "src\NlwExpertAuction.API\NlwExpertAuction.API.csproj", "{9474B477-A563-4D52-A5B3-664951232F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NlwExpertAuction.API", "src\NlwExpertAuction.API\NlwExpertAuction.API.csproj", "{9474B477-A563-4D52-A5B3-664951232F9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases.Test", "tests\UseCases.Test\UseCases.Test.csproj", "{EE5A5859-532F-4801-9706-9C62C2287BD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +21,17 @@ Global
 		{9474B477-A563-4D52-A5B3-664951232F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9474B477-A563-4D52-A5B3-664951232F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9474B477-A563-4D52-A5B3-664951232F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5A5859-532F-4801-9706-9C62C2287BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5A5859-532F-4801-9706-9C62C2287BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5A5859-532F-4801-9706-9C62C2287BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5A5859-532F-4801-9706-9C62C2287BD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9474B477-A563-4D52-A5B3-664951232F9E} = {0C9A80D0-E85E-4E4F-9B1A-4116D9C3D95B}
+		{EE5A5859-532F-4801-9706-9C62C2287BD8} = {56B72B6D-0CE9-4F73-A663-02DC3498C316}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99A94BD8-FDDB-4DCE-B58E-F69F6176C1DE}
